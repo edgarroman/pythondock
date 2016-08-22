@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     python-virtualenv \
     python-dev \
-    python3-pip \ 
-    pip3 install --upgrade pip
+    python3-pip 
+RUN pip3 install --upgrade pip
 RUN pip3 install virtualenv
 RUN pip3 install uwsgi
 RUN pip3 install setproctitle
