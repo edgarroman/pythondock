@@ -5,20 +5,10 @@
 # for a list of version numbers.
 FROM phusion/baseimage:0.9.19
 
+ADD . /image_build
+RUN /image_build/setup.sh
+
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
+EXPOSE 80 443
 
-# ...put your own build instructions here...
-RUN apt-get update && apt-get install -y \
-    git \
-    vim \
-    python-virtualenv \
-    python-dev \
-    python3-pip 
-RUN pip3 install --upgrade pip
-RUN pip3 install virtualenv
-RUN pip3 install uwsgi
-RUN pip3 install setproctitle
-
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
