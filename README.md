@@ -1,5 +1,5 @@
 # pythondock
-Docker Image for a python 3 based application
+Docker Image for a python 3 based application.  Based on phusion/baseimage
 
 ## Helpful references
 
